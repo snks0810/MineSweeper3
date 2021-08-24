@@ -3,8 +3,8 @@ public class Tile {
 
     public boolean isBomb;
     public int surroundingBombs;
-    private boolean uncovered;
-    private boolean flagged;
+    public boolean uncovered;
+    public boolean flagged;
     private int xCoordinate;
     private int yCoordinate;
 
@@ -20,6 +20,7 @@ public class Tile {
         else{
             isBomb = false;}
         uncovered = true;
+        //flagged = true;
     }
 
     // methods
@@ -36,10 +37,24 @@ public class Tile {
     public void setIsBomb( boolean bombState){
         this.isBomb = bombState;}
 
+    public boolean getUncovered(){
+        return this.uncovered;}
+
+    public void setUncovered( boolean isUnCovered){
+        this.uncovered = isUnCovered;}
+
+    public boolean getFlagged(){
+        return this.flagged;}
+
+    public void setFlagged( boolean isFlagged){
+        this.flagged = isFlagged;}
 
     public String toString(){
         if(!uncovered){
             return "[ ]";
+        }
+        else if(flagged){
+            return "[F]";
         }
         else if(isBomb){
             return "[*]";
