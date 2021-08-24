@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: MineSweeper3.TileTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.059 sec <<< FAILURE!
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.061 sec <<< FAILURE!
 bombStateTest(MineSweeper3.TileTest)  Time elapsed: 0.007 sec  <<< ERROR!
 java.lang.NullPointerException: Cannot invoke "MineSweeper3.Tile.setIsBomb(boolean)" because "someTile[0][0]" is null
 	at MineSweeper3.TileTest.bombStateTest(TileTest.java:24)
