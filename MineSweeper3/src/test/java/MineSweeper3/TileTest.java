@@ -1,8 +1,8 @@
 package MineSweeper3;
-import MineSweeper3.Tile;
-import MineSweeper3.HiddenMatrix;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -20,9 +20,9 @@ public class TileTest {
     @Test
     @DisplayName("bomb state test")
     public void bombStateTest(){
-        Tile[][] someTile = new Tile[0][0];
+        Tile[][] someTile = new Tile[2][2];
         someTile[0][0].setIsBomb(true);
-        assertEquals(true,someTile[0][0].getIsBomb(),
+        assertEquals(someTile[0][0].getIsBomb(),
                 "failed to hard code the state of a bomb");
     }
 
@@ -31,7 +31,7 @@ public class TileTest {
     public void flagStateTest(){
         Tile[][] someTile = new Tile[0][0];
         someTile[0][0].setFlagged(true);
-        assertEquals(true,someTile[0][0].getFlagged(),
+        assertEquals(someTile[0][0].getFlagged(),
                 "failed to hard code the state of a flag");
     }
 }

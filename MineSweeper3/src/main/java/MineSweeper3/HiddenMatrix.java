@@ -1,5 +1,4 @@
 package MineSweeper3;
-import MineSweeper3.Tile;
 
 public class HiddenMatrix {
 
@@ -85,11 +84,10 @@ public class HiddenMatrix {
         for(int i = -1; i <= 1; i++){        // checks top, middle then bottom column
             for(int j = -1; j <= 1; j++){    // checks left, middle then right row
                 if(a+i >= 0 && a+i <= 9 && b+j >= 0 && b+j <= 9){
-                    if(i==0 && j==0){}
-                    else{
+                    if(!(i==0 && j==0)){
                         if (matrix[a+i][b+j].isBomb) {
                             matrix[a][b].surroundingBombs++;}}
-                }else{}
+                }
             }
         }
     }

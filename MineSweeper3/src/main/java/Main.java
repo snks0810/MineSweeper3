@@ -1,5 +1,4 @@
 import MineSweeper3.HiddenMatrix;
-import MineSweeper3.Tile;
 
 public class Main {
 
