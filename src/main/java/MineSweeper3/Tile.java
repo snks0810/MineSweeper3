@@ -1,10 +1,11 @@
+package MineSweeper3;
 public class Tile {
     // attributes
 
-    private boolean isBomb;
-    private int surroundingBombs;
-    private boolean uncovered;
-    private boolean flagged;
+    public boolean isBomb;
+    public int surroundingBombs;
+    public boolean uncovered;
+    public boolean flagged;
     private int xCoordinate;
     private int yCoordinate;
 
@@ -14,31 +15,16 @@ public class Tile {
         this.xCoordinate = x;
         this.yCoordinate = y;
         float randomFloat = (float) Math.random();
-        float bombRatio = 0.3f;
+        float bombRatio = 0.25f;
         if(randomFloat <= bombRatio){
             isBomb = true;}
         else{
             isBomb = false;}
         uncovered = true;
+        //flagged = true;
     }
 
     // methods
-
-    public void checkSurroundingBombs(Tile[][] someTile,int a,int b){
-        for(int i = -1; i <= 1; i++){
-            for(int j = -1; j <= 1; j++){
-                if(a+i <= 0 || a+i >= 10 || b+j <= 0 || b+j >= 10){
-                    System.out.println("out of bounds at ("+(a+i)+","+(b+j)+")");
-                }else{
-                    //someTile = Tile[a+i][b+j];
-                    if(this.isBomb){
-                        this.surroundingBombs++;
-                    }}
-            }
-        }
-
-    }
-
 
     public int getSurroundingBombs(){
         return surroundingBombs;}
@@ -52,9 +38,24 @@ public class Tile {
     public void setIsBomb( boolean bombState){
         this.isBomb = bombState;}
 
+    public boolean getUncovered(){
+        return this.uncovered;}
+
+    public void setUncovered( boolean isUnCovered){
+        this.uncovered = isUnCovered;}
+
+    public boolean getFlagged(){
+        return this.flagged;}
+
+    public void setFlagged( boolean isFlagged){
+        this.flagged = isFlagged;}
+
     public String toString(){
         if(!uncovered){
             return "[ ]";
+        }
+        else if(flagged){
+            return "[F]";
         }
         else if(isBomb){
             return "[*]";
